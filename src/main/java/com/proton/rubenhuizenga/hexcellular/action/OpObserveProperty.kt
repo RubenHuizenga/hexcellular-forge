@@ -1,10 +1,10 @@
-package miyucomics.hexcellular.action
+package com.proton.rubenhuizenga.hexcellular.action
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexcellular.StateStorage
-import miyucomics.hexcellular.getProperty
+import com.proton.rubenhuizenga.hexcellular.StateStorage
+import com.proton.rubenhuizenga.hexcellular.getProperty
 
 object OpObserveProperty : ConstMediaAction {
 	override val argc = 1

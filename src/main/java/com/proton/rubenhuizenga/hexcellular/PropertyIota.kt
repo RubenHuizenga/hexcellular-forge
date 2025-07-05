@@ -1,22 +1,22 @@
-package miyucomics.hexcellular
+package com.proton.rubenhuizenga.hexcellular
 
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
-import net.minecraft.nbt.NbtCompound
-import net.minecraft.nbt.NbtElement
-import net.minecraft.server.world.ServerWorld
-import net.minecraft.text.Text
-import net.minecraft.util.Formatting
+import net.minecraft.nbt.CompoundTag
+import net.minecraft.nbt.Tag
+import net.minecraft.network.chat.Component
+import net.minecraft.ChatFormatting
+import net.minecraft.server.level.ServerLevel
 
 class PropertyIota(property: String, val readonly: Boolean = false) : Iota(TYPE, property) {
 	override fun isTruthy() = true
 	override fun toleratesOther(that: Iota) = typesMatch(this, that) && this.name == (that as PropertyIota).name
 	val name = payload as String
 
-	override fun serialize(): NbtElement {
-		val compound = NbtCompound()
+	override fun serialize(): Tag {
+		val compound = CompoundTag()
 		compound.putString("name", this.name)
 		compound.putBoolean("readonly", this.readonly)
 		return compound
@@ -25,8 +25,8 @@ class PropertyIota(property: String, val readonly: Boolean = false) : Iota(TYPE,
 	companion object {
 		@JvmField
 		val TYPE: IotaType<PropertyIota> = object : IotaType<PropertyIota>() {
-			override fun deserialize(nbt: NbtElement, world: ServerWorld) = PropertyIota((nbt as NbtCompound).getString("name"), nbt.getBoolean("readonly"))
-			override fun display(nbt: NbtElement) = Text.literal((nbt as NbtCompound).getString("name")).formatted(if (nbt.getBoolean("readonly")) Formatting.AQUA else Formatting.GREEN)
+			override fun deserialize(nbt: Tag, world: ServerLevel) = PropertyIota((nbt as CompoundTag).getString("name"), nbt.getBoolean("readonly"))			
+			override fun display(nbt: Tag) = Component.literal((nbt as CompoundTag).getString("name")).withStyle(if (nbt.getBoolean("readonly")) ChatFormatting.AQUA else ChatFormatting.GREEN)
 			override fun color() = -0x591c5f
 		}
 	}

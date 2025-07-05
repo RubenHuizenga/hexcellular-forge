@@ -1,4 +1,4 @@
-package miyucomics.hexcellular.action
+package com.proton.rubenhuizenga.hexcellular.action
 
 import at.petrak.hexcasting.api.casting.RenderedSpell
 import at.petrak.hexcasting.api.casting.castables.SpellAction
@@ -7,9 +7,9 @@ import at.petrak.hexcasting.api.casting.eval.vm.CastingImage
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.misc.MediaConstants
-import miyucomics.hexcellular.PropertyIota
-import miyucomics.hexcellular.StateStorage
-import miyucomics.hexcellular.generatePropertyName
+import com.proton.rubenhuizenga.hexcellular.PropertyIota
+import com.proton.rubenhuizenga.hexcellular.StateStorage
+import com.proton.rubenhuizenga.hexcellular.generatePropertyName
 
 object OpCreateProperty : SpellAction {
 	override val argc = 0

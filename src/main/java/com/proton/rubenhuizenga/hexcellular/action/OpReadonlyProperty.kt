@@ -1,11 +1,11 @@
-package miyucomics.hexcellular.action
+package com.proton.rubenhuizenga.hexcellular.action
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexcellular.PropertyIota
-import miyucomics.hexcellular.getProperty
+import com.proton.rubenhuizenga.hexcellular.PropertyIota
+import com.proton.rubenhuizenga.hexcellular.getProperty
 
 object OpReadonlyProperty : ConstMediaAction {
 	override val argc = 1

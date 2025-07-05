@@ -1,0 +1,33 @@
+modLoader="kotlinforforge" # or "javafml" if not using Kotlin-specific loader
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="hexcellular"
+version="${file.jarVersion}"
+displayName="Hexcellular (Forge)"
+description="Adds property iota for simple iota storage, state keeping, and syncing. Unofficial Forge port."
+authors="Ruben Huizenga (Original by miyucomics)"
+logoFile="assets/hexcellular/icon.png"
+issueTrackerURL="https://github.com/rubenhuizenga/hexcellular-forge/issues"
+displayURL="https://github.com/rubenhuizenga/hexcellular-forge"
+
+[[dependencies.hexcellular]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.hexcellular]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.hexcellular]]
+    modId="hexcasting"
+    mandatory=true
+    versionRange="[0.11.2,)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,4 +1,4 @@
-package miyucomics.hexcellular
+package com.proton.rubenhuizenga.hexcellular
 
 import kotlin.random.Random
 
