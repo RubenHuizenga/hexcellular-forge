@@ -4,7 +4,7 @@ plugins {
     id "net.minecraftforge.gradle" version "6.0.+"
     id "maven-publish"
     id "org.jetbrains.kotlin.jvm" version "2.1.21"
-    id org.jetbrains.kotlin.plugin.serialization" version "2.1.21"
+    id "org.jetbrains.kotlin.plugin.serialization" version "2.1.21"
 }
 
 version = mod_version
@@ -78,7 +78,7 @@ dependencies {
     implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.106")
 
     // Local runtime dependencies
-    modLocalRuntime files("${rootProject.rootDir}/libs/serialization-hooks-0.4.99999.jar")
+    runtimeOnly files("${rootProject.rootDir}/libs/serialization-hooks-0.4.99999.jar")
 }
 
 tasks.withType(JavaCompile).configureEach {
